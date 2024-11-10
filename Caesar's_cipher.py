@@ -1,4 +1,4 @@
-e = int(input(‘Enter value’))   
+e = int(input('Enter value'))   
 d = 26 - e  
 result = '' 
 command = int(input('Enter what you want? 1 - encrypt, 2 - decrypt: ')) 
