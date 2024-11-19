@@ -1,0 +1,18 @@
+text = 'Wikipedia is a free content online encyclopedia written and maintained by a community of volunteers, known as Wikipedians, through open collaboration and the wiki software MediaWiki. Wikipedia is the largest and most-read reference work in history, and is consistently ranked among the ten most visited websites; as of August 2024, it was ranked fourth by Semrush, and seventh by Similarweb. Founded by Jimmy Wales and Larry Sanger on January 15, 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers. Initially only available in English, editions of Wikipedia in more than 300 other languages have been developed. The English Wikipedia, with its almost 6.9 million articles, is the largest of the editions, which together comprise more than 63 million articles and attract more than 1.5 billion unique device visits and 13 million edits per month (about 5 edits per second on average) as of April 2024. In July 2024, over 25% of Wikipedias traffic was from the United States, followed by Japan at 6.2%, the United Kingdom at 5.8%, Russia at 5.2%, Germany at 5%, and the remaining 51% split among other countries. Wikipedia has been praised for its enablement of the democratization of knowledge, extent of coverage, unique structure, and culture. It has been criticized for exhibiting systemic bias, particularly gender bias against women and geographical bias against the Global South (Eurocentrism). While the reliability of Wikipedia was frequently criticized in the 2000s, it has improved over time, receiving greater praise from the late 2010s onward while becoming an important fact-checking site. Wikipedia has been censored by some national governments, ranging from specific pages to the entire site. Articles on breaking news are often accessed as sources for frequently updated information about those events.' 
+
+def letter_percentage(text): 
+
+    text = ''.join(filter(str.isalpha, text)).lower() 
+    total_letters = len(text) 
+    letter_count = {} 
+
+    for letter in text: 
+        letter_count[letter] = letter_count.get(letter, 0) + 1 
+        letter_percentage = {letter: (count / total_letters) * 100 for letter, count in letter_count.items()} 
+
+    return letter_percentage 
+
+percentages = letter_percentage(text) 
+sorted_percentages = sorted(percentages.items()) 
+for letter, percentage in sorted_percentages: 
+    print(f"{letter}: {percentage:.2f}%") 
